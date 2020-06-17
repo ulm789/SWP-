@@ -1,1 +1,3 @@
-20203051, kimjiyu, software
+20203051, kimjiyu
+software
+Kookmin Univ
