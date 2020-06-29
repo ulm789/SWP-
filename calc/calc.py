@@ -6,10 +6,17 @@ def application(environ, start_response):
     num1 = d.get('num1', [''])[0]
     num2 = d.get('num2', [''])[0]
     sum, mul = 4, 26
-    if '' not in [num1, num2]:
+
+    try:
         num1, num2 = int(num1), int(num2)
         sum = num1 + num2
         mul = num1 * num2
+    except ValueError:
+	sum = 99
+	mul = -99
+    except:
+	sum = 2020
+	mul = 3051
     response_body = html % {'sum':sum, 'mul':mul}
     start_response('200 OK', [
         ('Content-Yype', 'text/html'),
